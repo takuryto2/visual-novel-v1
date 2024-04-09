@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
 using TMPro;
+using Unity.Mathematics;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     TextMeshProUGUI message;
     List<string> tags;
     static Choice choiceSelected;
+
+    CharacterMovment CharacterMovment;
 
     // Start is called before the first frame update
     void Start()
@@ -144,6 +147,9 @@ public class DialogueManager : MonoBehaviour
                 case "color":
                     SetTextColor(param);
                     break;
+                case "entrance":
+                    EntranceOnStage(param);
+                    break;
             }
         }
     }
@@ -170,6 +176,31 @@ public class DialogueManager : MonoBehaviour
                 break;
             default:
                 Debug.Log($"{_color} is not available as a text color");
+                break;
+        }
+    }
+
+    void EntranceOnStage(string _entrance)
+    {
+        switch(_entrance)
+        {
+            case "linear":
+                CharacterMovment.Linear();
+                break;
+            case "ease":
+                CharacterMovment.Ease();
+                break;
+            case "easein":
+                CharacterMovment.EaseIn();
+                break;
+            case "easeout":
+                CharacterMovment.EaseOut();
+                break;
+            case "easeinout":
+                CharacterMovment.EaseInOut();
+                break;
+            case "overshoot":
+                CharacterMovment.Overshoot();
                 break;
         }
     }
