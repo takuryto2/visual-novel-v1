@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CharacterScript : MonoBehaviour
 {
-    public Animator anim;
+    public Animator faceAnim;
     public bool isTalking;
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
+        faceAnim = GetComponent<Animator>();
         isTalking = false;
     }
 
@@ -18,14 +18,14 @@ public class CharacterScript : MonoBehaviour
         switch(_name)
         {
             case "idle":
-                anim.SetTrigger("toIdle");
+                faceAnim.SetTrigger("toIdle");
                 break;
             case "talk":
                 isTalking = true;
-                anim.SetTrigger("toTalk");
+                faceAnim.SetTrigger("toTalk");
                 break;
             case "think":
-                anim.SetTrigger("toThink");
+                faceAnim.SetTrigger("toThink");
                 break;
         }
     }
