@@ -1,0 +1,2 @@
+//fade in/out du titre pour le mardi
+Aujourd’hui le cours de CM dure plus longtemps que d’habitude. Il est centré sur une étude concernant l’impressionisme dans la peinture. Maria est à côté de toi et elle semble beaucoup plus captivée que d’habitude. Ses yeux se tournent vers toi
